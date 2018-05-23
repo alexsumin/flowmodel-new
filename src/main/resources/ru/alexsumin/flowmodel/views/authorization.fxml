@@ -39,7 +39,7 @@
                      </GridPane.margin>
                   </ChoiceBox>
                   <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="passwordField"/>
-                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="212.0" text="Войти" GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="loginButton"/>
+                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="212.0" text="Войти" GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="loginButton" onAction="#login"/>
                </children>
             </GridPane>
             <Label text="Авторизация">
