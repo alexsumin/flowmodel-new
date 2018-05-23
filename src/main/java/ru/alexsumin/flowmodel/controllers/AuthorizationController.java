@@ -54,23 +54,32 @@ public class AuthorizationController {
     @FXML
     private void login(final Event event) {
         if (userChoiceBox.getSelectionModel().isSelected(ADMIN_INDEX)) {
+
             if (accountService.checkAdminPassword(passwordField.getText())) {
                 //todo: load dbeditor
                 System.out.println("db editor");
-            } else {
-                //todo: alert
-                System.out.println("ooups!");
-            }
-        } else {
+            } else
+                showError();
+        } else
             //todo: load calculationview
             System.out.println("calc view");
-        }
+
     }
 
     private void setElementsDisable(boolean disabled) {
         passwordLabel.setVisible(disabled);
         passwordField.setVisible(disabled);
         loginButton.setDisable(disabled);
+    }
+
+    private void showError() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Ошибка");
+        alert.setHeaderText("Ошибка авторизации!");
+        alert.setContentText("Вы ввели неверные данные пользователя!");
+
+        alert.showAndWait();
+
     }
 
 
